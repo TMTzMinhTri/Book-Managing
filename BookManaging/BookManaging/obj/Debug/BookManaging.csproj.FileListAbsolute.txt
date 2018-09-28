@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\bin\Debug\BookManaging.exe.config
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\bin\Debug\BookManaging.exe
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\bin\Debug\BookManaging.pdb
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\obj\Debug\BookManaging.exe
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\obj\Debug\BookManaging.pdb
+C:\Users\Administrator\Desktop\BookManaging\BookManaging\BookManaging\obj\Debug\BookManaging.csprojResolveAssemblyReference.cache
