@@ -1,0 +1,128 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BAI1_LAB2
+{
+
+    interface IBook
+    {
+        string this[int index]
+        {
+            get;
+            set;
+        }
+        string Title
+        {
+            get;
+            set;
+        }
+        string Author
+        {
+            get;
+            set;
+        }
+        string Publisher
+        {
+            get;
+            set;
+        }
+        string ISBN
+        {
+            get;
+            set;
+        }
+        int year
+        {
+            get;
+            set;
+        }
+        void show();
+    }
+    class Book : IBook,IComparable
+    {
+
+        public int CompareTo(object other)
+        {
+            if (this.GetType() != other.GetType())
+            {
+                throw (new ArgumentException("both object being compare must  be of square"));
+            }
+            else
+            {
+                Book o = (Book)other;
+                int FNamecpm = string.Compare(this.title, o.title);
+                return FNamecpm;
+            }
+        }
+
+
+        public void Input()
+        {
+            Console.Write("Title: ");
+            title = Console.ReadLine();
+            Console.Write("Author: ");
+            author = Console.ReadLine();
+            Console.Write("Publisher: ");
+            publisher = Console.ReadLine();
+            Console.Write("ISBN: ");
+            ISBN = Console.ReadLine();
+            Console.Write("Year: ");
+            year = int.Parse(Console.ReadLine());
+            Console.WriteLine("Input chapter (finished with empty string)");
+            string str;
+            do
+            {
+                str = Console.ReadLine();
+                if (str.Length > 0)
+                    chapter.Add(str);
+            } while (str.Length > 0);
+        }
+    }
+    class BookList
+    {
+        private ArrayList list = new ArrayList();
+        public void AddBook()
+        {
+            Book b = new Book();
+            b.Input();
+            list.Add(b);
+        }
+        public void ShowList()
+        {
+            foreach (Book b in list)
+            {
+                b.show();
+            }
+        }
+        public void InputList()
+        {
+            int n;
+            Console.Write("Amount of books: ");
+            n = int.Parse(Console.ReadLine());
+            while (n > 0)
+            {
+                AddBook();
+                n--;
+            }
+        }
+        public void sort()
+        {
+            list.Sort();
+        }
+}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BookList bl = new BookList();
+            bl.InputList();
+            bl.sort();
+            bl.ShowList();
+            Console.ReadLine();
+        }
+    }
+}
